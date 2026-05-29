@@ -483,6 +483,36 @@
   [data-density="comfortable"] .row .cell { font-size: 13.5px; }
   [data-density="comfortable"] .row .cell .sub { font-size: 11.5px; }
   [data-density="compact"] .row .cell .sub { display: none; }
+
+  /* ---- Page banner (shows above the app) -------------------------------- */
+  .page-banner {
+    background: linear-gradient(118deg, #16335f 0%, #2c5aa0 58%, #5c8ed4 100%);
+    color: #fff;
+    padding: 46px 28px 50px;
+  }
+  .page-banner-inner { max-width: 1280px; margin: 0 auto; }
+  .pb-eyebrow {
+    font-family: var(--font-sans);
+    font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+    color: rgba(255,255,255,0.82); margin: 0 0 12px;
+  }
+  .pb-title {
+    font-family: "Newsreader", Georgia, serif;
+    font-size: 42px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.04;
+    margin: 0 0 10px;
+  }
+  .pb-sub {
+    font-size: 16px; line-height: 1.5; color: rgba(255,255,255,0.92);
+    margin: 0; max-width: 720px;
+  }
+  /* The app's own title is hidden so it doesn't repeat under the banner;
+     the live "Week of …" meta stays (it updates from the Sheet). */
+  .app .topbar .brand { display: none; }
+  .app .topbar { justify-content: flex-end; padding-top: 20px; }
+  @media (max-width: 760px) {
+    .pb-title { font-size: 32px; }
+    .page-banner { padding: 34px 20px 38px; }
+  }
 </style>
 </head>
 <body>
@@ -510,6 +540,13 @@
     </g>
   </svg>
 </template>
+<header class="page-banner">
+  <div class="page-banner-inner">
+    <div class="pb-eyebrow">Fort Worth ISD · School Leadership</div>
+    <h1 class="pb-title">Principal List 2026–27</h1>
+    <p class="pb-sub">Your weekly checklist, updated every Monday morning. Check off as you go — your progress saves to this device only.</p>
+  </div>
+</header>
 <div id="root"></div>
 
 <!-- React + Babel -->
