@@ -529,8 +529,7 @@ function App() {
           { id: "dashboard", label: "Dashboard" },
           { id: "weekly",    label: "This Week",  count: weekItems.length },
           { id: "monthly",   label: "This Month", count: allItems.length },
-          { id: "offplate",  label: "Off-Plate Log", count: D.offPlateLog.length },
-          { id: "notes",     label: "Design Notes" }
+          { id: "offplate",  label: "Off-Plate Log", count: D.offPlateLog.length }
         ]} />
 
       {tab === "dashboard" && (<>
@@ -546,7 +545,6 @@ function App() {
       {tab === "weekly"   && <WeeklyView showOffPlateRail={t.showOffPlateRail} dense={t.density === "compact"} />}
       {tab === "monthly"  && <MonthlyView dense={t.density === "compact"} />}
       {tab === "offplate" && <OffPlateView />}
-      {tab === "notes"    && <NotesView />}
 
       <Tweaks />
     </div>
